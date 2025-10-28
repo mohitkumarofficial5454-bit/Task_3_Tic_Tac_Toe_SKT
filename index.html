@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="title">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 3v18M18 3v18M3 6h18M3 18h18" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <div style="font-size:1.3rem; font-weight:900; letter-spacing:.3px">Tic-Tac-Toe <span class="badge"></span></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="segmented" role="tablist" aria-label="Game mode">
+          <input type="radio" id="mode2" name="mode" value="pvp" checked>
+          <label for="mode2">2 Players</label>
+          <input type="radio" id="mode1" name="mode" value="cpu">
+          <label for="mode1">Vs Computer</label>
+        </div>
+        <div class="segmented" id="sideChooser" title="Who plays X?">
+          <input type="radio" id="youX" name="side" value="X" checked>
+          <label for="youX">You: X</label>
+          <input type="radio" id="youO" name="side" value="O">
+          <label for="youO">You: O</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-wrap">
+      <div class="statusbar">
+        <div class="status" id="status">X to move</div>
+        <div class="score" aria-label="Scoreboard">
+          <div class="card">X: <span id="scoreX">0</span></div>
+          <div class="card">O: <span id="scoreO">0</span></div>
+          <div class="card">Draws: <span id="scoreD">0</span></div>
+        </div>
+      </div>
+
+      <div class="board" id="board" aria-label="Tic Tac Toe Board">
+        <!-- 9 cells -->
+        <div class="cell" data-i="0" aria-label="Cell 1" tabindex="0"></div>
+        <div class="cell" data-i="1" aria-label="Cell 2" tabindex="0"></div>
+        <div class="cell" data-i="2" aria-label="Cell 3" tabindex="0"></div>
+        <div class="cell" data-i="3" aria-label="Cell 4" tabindex="0"></div>
+        <div class="cell" data-i="4" aria-label="Cell 5" tabindex="0"></div>
+        <div class="cell" data-i="5" aria-label="Cell 6" tabindex="0"></div>
+        <div class="cell" data-i="6" aria-label="Cell 7" tabindex="0"></div>
+        <div class="cell" data-i="7" aria-label="Cell 8" tabindex="0"></div>
+        <div class="cell" data-i="8" aria-label="Cell 9" tabindex="0"></div>
+        <svg class="strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line id="strikeLine" x1="0" y1="0" x2="0" y2="0"/>
+        </svg>
+      </div>
+
+      <div class="footer">
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn" id="newRound">New Round</button>
+          <button class="btn" id="resetAll" title="Reset board and scores">Reset All</button>
+        </div>
+        <div>
+          <span class="pill x" id="turnPill">X</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
